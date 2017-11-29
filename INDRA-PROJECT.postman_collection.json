@@ -1,0 +1,220 @@
+{
+	"variables": [],
+	"info": {
+		"name": "INDRA-PROJECT",
+		"_postman_id": "ba7eeee7-9f52-9ffb-7bbb-1854343bc308",
+		"description": "Projeto indra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Station",
+			"description": "",
+			"item": [
+				{
+					"name": "Stations list all",
+					"request": {
+						"url": "http://localhost:9000/api/v1/stations",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Stations show one",
+					"request": {
+						"url": "http://localhost:9000/api/v1/stations/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Stations save",
+					"request": {
+						"url": "http://localhost:9000/api/v1/stations",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Estação meio do mato 1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Estação meio do mato 1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "FIX",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "active",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "mac_address",
+									"value": "10:20:30:40:50:70",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Stations update",
+					"request": {
+						"url": "http://localhost:9000/api/v1/stations/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Estação meio do mato 2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Estação meio do mato 2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "FIX",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "active",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "mac_address",
+									"value": "10:20:30:40:50:60",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Stations delete",
+					"request": {
+						"url": "http://localhost:9000/api/v1/stations/1",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sensor",
+			"description": "",
+			"item": [
+				{
+					"name": "Sensors list all",
+					"request": {
+						"url": "http://localhost:9000/api/v1/stations/10:20:30:40:50:70/sensors",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Sensors save",
+					"request": {
+						"url": "http://localhost:9000/api/v1/stations/10:20:30:40:50:70/sensors",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Temperatura ambiente",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "TEMPERATURE",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "active",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "intervals",
+									"value": "30",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "unit",
+									"value": "ºC",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

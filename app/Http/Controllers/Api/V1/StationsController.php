@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Station;
+use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller;
 
 class StationsController extends Controller
@@ -24,8 +25,6 @@ class StationsController extends Controller
     protected $messages = [
         'required' => ':attribute é obrigatório!'
     ];
-
-    protected $relationships = ["sensors"];
 
     public function __construct( Station $model)
     {
@@ -66,7 +65,6 @@ class StationsController extends Controller
                 return $query;
             })
             ->where($where)
-            ->with($this->relationships())
             ->paginate($limit);
 
         return response()->json($results);
@@ -76,7 +74,6 @@ class StationsController extends Controller
     public function show($id)
     {
         $result = $this->model
-            ->with($this->relationships())
             ->findOrFail($id);
         return response()->json($result);
     }
@@ -100,14 +97,6 @@ class StationsController extends Controller
         $result = $this->model->findOrFail($id);
         $result->delete();
         return response()->json($result);
-    }
-
-    protected function relationships()
-    {
-        if (isset($this->relationships)) {
-            return $this->relationships;
-        }
-        return [];
     }
 
 }

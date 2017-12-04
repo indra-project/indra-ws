@@ -1,10 +1,9 @@
 {
-	"variables": [],
 	"info": {
 		"name": "INDRA-PROJECT",
 		"_postman_id": "ba7eeee7-9f52-9ffb-7bbb-1854343bc308",
 		"description": "Projeto indra",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -14,35 +13,58 @@
 				{
 					"name": "Stations list all",
 					"request": {
-						"url": "http://localhost:9000/api/v1/stations",
 						"method": "GET",
 						"header": [],
 						"body": {},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations"
+							]
+						},
+						"description": null
 					},
 					"response": []
 				},
 				{
 					"name": "Stations show one",
 					"request": {
-						"url": "http://localhost:9000/api/v1/stations/1",
 						"method": "GET",
 						"header": [],
 						"body": {},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"1"
+							]
+						},
+						"description": null
 					},
 					"response": []
 				},
 				{
 					"name": "Stations save",
 					"request": {
-						"url": "http://localhost:9000/api/v1/stations",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"description": ""
+								"value": "application/x-www-form-urlencoded"
 							}
 						],
 						"body": {
@@ -51,49 +73,55 @@
 								{
 									"key": "name",
 									"value": "Estação meio do mato 1",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "description",
 									"value": "Estação meio do mato 1",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "type",
 									"value": "FIX",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "active",
 									"value": "1",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "mac_address",
 									"value": "10:20:30:40:50:70",
-									"description": "",
 									"type": "text"
 								}
 							]
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations"
+							]
+						},
+						"description": null
 					},
 					"response": []
 				},
 				{
 					"name": "Stations update",
 					"request": {
-						"url": "http://localhost:9000/api/v1/stations/1",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"description": ""
+								"value": "application/x-www-form-urlencoded"
 							}
 						],
 						"body": {
@@ -102,47 +130,69 @@
 								{
 									"key": "name",
 									"value": "Estação meio do mato 2",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "description",
 									"value": "Estação meio do mato 2",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "type",
 									"value": "FIX",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "active",
 									"value": "1",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "mac_address",
 									"value": "10:20:30:40:50:60",
-									"description": "",
 									"type": "text"
 								}
 							]
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"1"
+							]
+						},
+						"description": null
 					},
 					"response": []
 				},
 				{
 					"name": "Stations delete",
 					"request": {
-						"url": "http://localhost:9000/api/v1/stations/1",
 						"method": "DELETE",
 						"header": [],
 						"body": {},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"1"
+							]
+						},
+						"description": null
 					},
 					"response": []
 				}
@@ -155,24 +205,62 @@
 				{
 					"name": "Sensors list all",
 					"request": {
-						"url": "http://localhost:9000/api/v1/stations/10:20:30:40:50:70/sensors",
 						"method": "GET",
 						"header": [],
 						"body": {},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:70/sensors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"10:20:30:40:50:70",
+								"sensors"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Sensors show one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:70/sensors/WATER_FLUX",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"10:20:30:40:50:70",
+								"sensors",
+								"WATER_FLUX"
+							]
+						},
+						"description": null
 					},
 					"response": []
 				},
 				{
 					"name": "Sensors save",
 					"request": {
-						"url": "http://localhost:9000/api/v1/stations/10:20:30:40:50:70/sensors",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"description": ""
+								"value": "application/x-www-form-urlencoded"
 							}
 						],
 						"body": {
@@ -180,13 +268,72 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Temperatura ambiente",
-									"description": "",
+									"value": "Sensor de presença",
 									"type": "text"
 								},
 								{
 									"key": "type",
-									"value": "TEMPERATURE",
+									"value": "PRESENCE_SENSOR",
+									"type": "text"
+								},
+								{
+									"key": "active",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "intervals",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "unit",
+									"value": "m",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/sensors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"10:20:30:40:50:80",
+								"sensors"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Sensors update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Sensor de presença do meio do mato",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "PRESENCE_SENSOR",
 									"description": "",
 									"type": "text"
 								},
@@ -198,19 +345,61 @@
 								},
 								{
 									"key": "intervals",
-									"value": "30",
+									"value": "25",
 									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "unit",
-									"value": "ºC",
+									"value": "m",
 									"description": "",
 									"type": "text"
 								}
 							]
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/sensors/PRESENCE_SENSOR",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"10:20:30:40:50:80",
+								"sensors",
+								"PRESENCE_SENSOR"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Sensors delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/sensors/PRESENCE_SENSOR",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"10:20:30:40:50:80",
+								"sensors",
+								"PRESENCE_SENSOR"
+							]
+						},
+						"description": null
 					},
 					"response": []
 				}

@@ -25,9 +25,9 @@ $router->group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function() use (
 
     //Sensors routes
     $router->get('stations/{mac}/sensors', 'SensorController@index');
-    $router->get('stations/{mac}/sensors/{id}', 'SensorController@show');
+    $router->get('stations/{mac}/sensors/{type}', 'SensorController@show');
     $router->post('stations/{mac}/sensors', 'SensorController@store');
-    $router->put('stations/{mac}/sensors/{id}', 'SensorController@update');
-    $router->delete('stations/{mac}/sensors/{id}', 'SensorController@destroy');
+    $router->put('stations/{mac}/sensors/{type}', 'SensorController@update');
+    $router->delete('stations/{mac}/sensors/{type}', 'SensorController@destroy');
 
 });

@@ -11,7 +11,8 @@ class Sensor extends Model
         'type',
         'active',
         'intervals',
-        'unit'
+        'unit',
+        'station_id'
     ];
 
     public function station()

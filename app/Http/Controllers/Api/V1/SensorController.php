@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Sensor;
+use App\SensorData;
 use App\Station;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller;
@@ -126,6 +127,28 @@ class SensorController extends Controller
             ->whereType($type)
             ->firstOrFail();
         $result->delete();
+        return response()->json($result);
+    }
+
+    public function data(Request $request, $mac, $type)
+    {
+        $station = Station::whereMacAddress($mac)->firstOrFail();
+        $sensor = $this->model
+            ->whereStationId($station->id)
+            ->whereType($type)
+            ->firstOrFail();
+
+        $fields = [
+            'value' => $request->get('value'),
+            'date' => $request->get('date'),
+            'altitude' => $request->get('altitude'),
+            'latitude' => $request->get('latitude'),
+            'longitude' => $request->get('longitude'),
+            'sensor_id' => $sensor->id
+        ];
+
+        $result = SensorData::create($fields);
+
         return response()->json($result);
     }
 

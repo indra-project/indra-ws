@@ -11,6 +11,31 @@
 			"description": "",
 			"item": [
 				{
+					"name": "Stations config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/config",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"10:20:30:40:50:80",
+								"config"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
 					"name": "Stations list all",
 					"request": {
 						"method": "GET",
@@ -307,6 +332,68 @@
 								"stations",
 								"10:20:30:40:50:80",
 								"sensors"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Sensors data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2017-12-05 10:00:00",
+									"type": "text"
+								},
+								{
+									"key": "altitude",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "-49",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "-18",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/sensors/WATER_FLUX/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"10:20:30:40:50:80",
+								"sensors",
+								"WATER_FLUX",
+								"data"
 							]
 						},
 						"description": null

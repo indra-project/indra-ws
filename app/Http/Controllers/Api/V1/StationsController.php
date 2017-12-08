@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Sensor;
 use App\Station;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller;
@@ -96,6 +97,24 @@ class StationsController extends Controller
     public function destroy($id){
         $result = $this->model->findOrFail($id);
         $result->delete();
+        return response()->json($result);
+    }
+
+    public function config($mac)
+    {
+        $station = $this->model->whereMacAddress($mac)->firstOrFail();
+        $sensors = Sensor::whereStationId($station->id)->get();
+        $result = [
+            'active' => $station->active
+        ];
+
+        foreach ($sensors as $sensor) {
+            $result['sensors'][$sensor->type] = [
+                'active' => $sensor->active,
+                'intervals' => $sensor->intervals
+            ];
+        }
+
         return response()->json($result);
     }
 

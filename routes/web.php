@@ -23,11 +23,18 @@ $router->group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function() use (
     $router->put('stations/{id}', 'StationsController@update');
     $router->delete('stations/{id}', 'StationsController@destroy');
 
+    //Station config
+    $router->get('stations/{mac}/config', 'StationsController@config');
+
     //Sensors routes
     $router->get('stations/{mac}/sensors', 'SensorController@index');
     $router->get('stations/{mac}/sensors/{type}', 'SensorController@show');
     $router->post('stations/{mac}/sensors', 'SensorController@store');
     $router->put('stations/{mac}/sensors/{type}', 'SensorController@update');
     $router->delete('stations/{mac}/sensors/{type}', 'SensorController@destroy');
+
+    //Sensor data
+    $router->post('stations/{mac}/sensors/{type}/data', 'SensorController@data');
+
 
 });

@@ -88,7 +88,7 @@ class StationsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, $this->rules ?? [], $this->messages ?? []);
+        //$this->validate($request, $this->rules ?? [], $this->messages ?? []);
         $result = $this->model->findOrFail($id);
         $result->update($request->all());
         return response()->json($result);

@@ -113,7 +113,7 @@ class SensorController extends Controller
             ->whereStationId($station->id)
             ->whereType($type)
             ->firstOrFail();
-        $this->validate($request, $this->rules ?? [], $this->messages ?? []);
+        //$this->validate($request, $this->rules ?? [], $this->messages ?? []);
 
 
         $result->update($request->all());

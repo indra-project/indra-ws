@@ -17,12 +17,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/config",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:80/config",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -42,12 +40,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -65,12 +61,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/1",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -123,12 +117,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -180,12 +172,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/1",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -204,12 +194,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/1",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -234,12 +222,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:70/sensors",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:70/sensors",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -259,12 +245,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:70/sensors/WATER_FLUX",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:70/sensors/WATER_FLUX",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -320,12 +304,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/sensors",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:80/sensors",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -380,12 +362,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/sensors/WATER_FLUX/data",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:80/sensors/WATER_FLUX/data",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -445,12 +425,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/sensors/PRESENCE_SENSOR",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:80/sensors/PRESENCE_SENSOR",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",
@@ -471,12 +449,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:9000/api/v1/stations/10:20:30:40:50:80/sensors/PRESENCE_SENSOR",
-							"protocol": "http",
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:80/sensors/PRESENCE_SENSOR",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "9000",
 							"path": [
 								"api",
 								"v1",

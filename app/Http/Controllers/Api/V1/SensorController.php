@@ -38,13 +38,26 @@ class SensorController extends Controller
     {
         $station = Station::whereMacAddress($mac)->firstOrFail();
 
-        $results = $this->model
-            ->whereStationId($station->id)
-            ->join('sensors_data', function ($join) {
-                $join->orderBy('id', 'desc');
-            })
-            ->select('sensors.*', 'sensors_data.value')
-            ->get();
+        $sensors = $this->model->whereStationId($station->id)->get();
+
+        $results = [];
+
+        foreach ($sensors as $sensor) {
+
+            $lastData = SensorData::whereSensorId($sensor->id)->orderBy('date', 'DESC')->first();
+
+            $results[] = [
+                'id' => $sensor->id,
+                'name' => $sensor->name,
+                'type' => $sensor->type,
+                'station_id' => $sensor->station_id,
+                'active' => $sensor->active,
+                'intervals' => $sensor->intervals,
+                'unit' => $sensor->unit,
+                'value' => ($lastData === null) ? null : $lastData->value,
+            ];
+
+        }
 
         return response()->json($results);
 

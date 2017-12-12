@@ -38,39 +38,13 @@ class SensorController extends Controller
     {
         $station = Station::whereMacAddress($mac)->firstOrFail();
 
-        $data = $request->all();
-
-        $limit = $data['limit'] ?? 20;
-
-        $order = $data['order'] ?? null;
-        if ($order !== null) {
-            $order = explode(',', $order);
-        }
-        $order[0] = $order[0] ?? 'id';
-        $order[1] = $order[1] ?? 'asc';
-
-        $where = $data['where'] ?? [];
-
-        $like = null;
-        if (!empty($data['like']) and is_array($data['like'])) {
-            $like = $data['like'];
-
-            $key = key(reset($like));
-            $like[0] = $key;
-            $like[1] = '%'.$like[$key].'%';
-        }
-
         $results = $this->model
-            ->orderBy($order[0], $order[1])
-            ->where(function ($query) use ($like) {
-                if ($like) {
-                    return $query->where($like[0], 'like', $like[1]);
-                }
-                return $query;
-            })
             ->whereStationId($station->id)
-            ->where($where)
-            ->paginate($limit);
+            ->join('sensors_data', function ($join) {
+                $join->orderBy('id', 'desc');
+            })
+            ->select('sensors.*', 'sensors_data.value')
+            ->get();
 
         return response()->json($results);
 

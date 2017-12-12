@@ -35,38 +35,7 @@ class StationsController extends Controller
     public function index(Request $request)
     {
 
-        $data = $request->all();
-
-        $limit = $data['limit'] ?? 20;
-
-        $order = $data['order'] ?? null;
-        if ($order !== null) {
-            $order = explode(',', $order);
-        }
-        $order[0] = $order[0] ?? 'id';
-        $order[1] = $order[1] ?? 'asc';
-
-        $where = $data['where'] ?? [];
-
-        $like = null;
-        if (!empty($data['like']) and is_array($data['like'])) {
-            $like = $data['like'];
-
-            $key = key(reset($like));
-            $like[0] = $key;
-            $like[1] = '%'.$like[$key].'%';
-        }
-
-        $results = $this->model
-            ->orderBy($order[0], $order[1])
-            ->where(function ($query) use ($like) {
-                if ($like) {
-                    return $query->where($like[0], 'like', $like[1]);
-                }
-                return $query;
-            })
-            ->where($where)
-            ->paginate($limit);
+        $results = $this->model->get();
 
         return response()->json($results);
 
@@ -92,6 +61,27 @@ class StationsController extends Controller
         $result = $this->model->findOrFail($id);
         $result->update($request->all());
         return response()->json($result);
+    }
+
+    public function sensor_data(Request $request, $mac)
+    {
+        $station = $this->model->whereMacAddress($mac)->firstOrFail();
+
+        $startDate = $request->get('startDate', date('Y-m-d 00:00:00'));
+        $endDate = $request->get('endDate', date('Y-m-d 23:59:59'));
+
+       // dd($startDate);
+       // dd($startDate);
+
+        $sensors = Sensor::whereStationId($station->id)
+            ->with(['data' => function ($data) use ($startDate, $endDate) {
+                $data
+                    ->whereDate('date', '>=', $startDate)
+                    ->whereDate('date', '<=', $endDate);
+            }])
+            ->get();
+
+        return response()->json($sensors);
     }
 
     public function destroy($id){

@@ -77,6 +77,29 @@
 					"response": []
 				},
 				{
+					"name": "Stations sensor data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:60/sensor-data",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"stations",
+								"10:20:30:40:50:60",
+								"sensor-data"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
 					"name": "Stations save",
 					"request": {
 						"method": "POST",
@@ -134,7 +157,7 @@
 				{
 					"name": "Stations update",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -146,12 +169,12 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Estação meio do mato 2",
+									"value": "Estação meio do mato 3",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "Estação meio do mato 2",
+									"value": "Estação meio do mato 3",
 									"type": "text"
 								},
 								{
@@ -222,7 +245,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:70/sensors",
+							"raw": "{{url}}/api/v1/stations/10:20:30:40:50:80/sensors",
 							"host": [
 								"{{url}}"
 							],
@@ -230,7 +253,7 @@
 								"api",
 								"v1",
 								"stations",
-								"10:20:30:40:50:70",
+								"10:20:30:40:50:80",
 								"sensors"
 							]
 						},
@@ -383,7 +406,7 @@
 				{
 					"name": "Sensors update",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",

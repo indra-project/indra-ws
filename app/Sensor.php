@@ -20,4 +20,8 @@ class Sensor extends Model
         return $this->belongsTo(Station::class);
     }
 
+    public function data()
+    {
+        return $this->hasMany(SensorData::class);
+    }
 }

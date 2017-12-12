@@ -20,8 +20,9 @@ $router->group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function() use (
     $router->get('stations', 'StationsController@index');
     $router->get('stations/{id}', 'StationsController@show');
     $router->post('stations', 'StationsController@store');
-    $router->put('stations/{id}', 'StationsController@update');
+    $router->post('stations/{id}', 'StationsController@update');
     $router->delete('stations/{id}', 'StationsController@destroy');
+    $router->get('stations/{mac}/sensor-data', 'StationsController@sensor_data');
 
     //Station config
     $router->get('stations/{mac}/config', 'StationsController@config');
@@ -30,7 +31,7 @@ $router->group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function() use (
     $router->get('stations/{mac}/sensors', 'SensorController@index');
     $router->get('stations/{mac}/sensors/{type}', 'SensorController@show');
     $router->post('stations/{mac}/sensors', 'SensorController@store');
-    $router->put('stations/{mac}/sensors/{type}', 'SensorController@update');
+    $router->post('stations/{mac}/sensors/{type}', 'SensorController@update');
     $router->delete('stations/{mac}/sensors/{type}', 'SensorController@destroy');
 
     //Sensor data
